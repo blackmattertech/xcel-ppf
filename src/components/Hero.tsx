@@ -78,7 +78,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             A CRM Built Specifically for Your{' '}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              PPF & Accessories Business
+              Business
             </span>
           </h1>
 
