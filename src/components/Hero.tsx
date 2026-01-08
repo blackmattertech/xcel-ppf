@@ -16,7 +16,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+    <section id="info" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{

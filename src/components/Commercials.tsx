@@ -85,7 +85,7 @@ export function Commercials() {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-4 relative">
+    <section id="quotation" className="py-20 px-4 relative">
       <div className="max-w-5xl mx-auto">
         <motion.div
           className="text-center mb-16"

@@ -16,12 +16,12 @@ export function WhatIsIt() {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Introducing Your{' '}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Custom PPF CRM
+              Custom CRM
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Not a generic tool. A complete business management system built exclusively 
-            for your Paint Protection Film and automotive accessories operation.
+            for your operation.
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ export function WhatIsIt() {
             {
               icon: Target,
               title: 'Built Only for You',
-              description: 'Custom workflows matching your exact PPF business processes',
+              description: 'Custom workflows matching your exact business processes',
               color: 'cyan'
             },
             {

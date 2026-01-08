@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Info, GitBranch, FileText } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function StickyBottomBar() {
@@ -15,12 +15,12 @@ export function StickyBottomBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleCall = () => {
-    window.location.href = 'tel:+1234567890';
-  };
-
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank');
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offset = 70; // keep a small offset for readability
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   return (
@@ -31,23 +31,32 @@ export function StickyBottomBar() {
       transition={{ duration: 0.3 }}
     >
       <div className="bg-[#0a0a0f]/95 backdrop-blur-lg border-t border-white/10 p-4">
-        <div className="flex gap-3 max-w-md mx-auto">
+        <div className="flex gap-3 max-w-xl mx-auto">
           <motion.button
-            onClick={handleCall}
-            className="flex-1 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg"
+            onClick={() => scrollToSection('info')}
+            className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg text-sm"
             whileTap={{ scale: 0.95 }}
           >
-            <Phone className="w-5 h-5" />
-            Call
+            <Info className="w-4 h-4" />
+            Information
           </motion.button>
 
           <motion.button
-            onClick={handleWhatsApp}
-            className="flex-1 py-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg"
+            onClick={() => scrollToSection('flowchart')}
+            className="flex-1 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg text-sm"
             whileTap={{ scale: 0.95 }}
           >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp
+            <GitBranch className="w-4 h-4" />
+            Flow Chart
+          </motion.button>
+
+          <motion.button
+            onClick={() => scrollToSection('quotation')}
+            className="flex-1 py-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg text-sm"
+            whileTap={{ scale: 0.95 }}
+          >
+            <FileText className="w-4 h-4" />
+            Quotation
           </motion.button>
         </div>
       </div>

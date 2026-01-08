@@ -49,7 +49,7 @@ const flowSteps = [
 
 export function Flowchart() {
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
+    <section id="flowchart" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-cyan-500/5" />
 

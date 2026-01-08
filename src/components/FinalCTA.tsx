@@ -87,7 +87,7 @@ export function FinalCTA() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              It is designed exclusively around your PPF business
+              It is designed exclusively around your business
             </motion.p>
 
             <motion.p
@@ -110,7 +110,7 @@ export function FinalCTA() {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               {[
-                { icon: '🎯', title: 'Built for You', text: 'Custom workflows for PPF operations' },
+                { icon: '🎯', title: 'Built for You', text: 'Custom workflows for your operations' },
                 { icon: '⚡', title: 'Save 20+ hrs/week', text: 'Automation eliminates manual work' },
                 { icon: '📈', title: 'Increase Revenue', text: '2x better conversion rates' }
               ].map((point, i) => (

@@ -75,7 +75,7 @@ export function Features() {
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Modular features designed specifically for PPF business operations
+            Modular features designed specifically for your business operations
           </p>
         </motion.div>
 
