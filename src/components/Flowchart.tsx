@@ -1,6 +1,8 @@
-import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, CheckCircle2, ChevronUp, FileText } from 'lucide-react';
 import { GlassCard } from './GlassCard';
+import { DetailedFlowchart } from './DetailedFlowchart';
 
 const flowSteps = [
   {
@@ -48,6 +50,8 @@ const flowSteps = [
 ];
 
 export function Flowchart() {
+  const [showDetailed, setShowDetailed] = useState(false);
+
   return (
     <section id="flowchart" className="py-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
@@ -185,6 +189,59 @@ export function Flowchart() {
             </div>
           ))}
         </div>
+
+        {/* View Detailed Flowchart Button */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <motion.button
+            onClick={() => setShowDetailed(!showDetailed)}
+            className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold flex items-center gap-3 mx-auto shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {showDetailed ? (
+              <>
+                <ChevronUp className="w-5 h-5" />
+                Hide Detailed Flowchart
+              </>
+            ) : (
+              <>
+                <FileText className="w-5 h-5" />
+                View Detailed Flowchart
+              </>
+            )}
+          </motion.button>
+        </motion.div>
+
+        {/* Detailed Flowchart */}
+        <AnimatePresence>
+          {showDetailed && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-12 overflow-x-auto"
+            >
+              <div className="mb-12 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                  Complete Lead Journey Flow
+                </h3>
+                <p className="text-gray-400">
+                  Detailed CRM workflow from lead entry to conversion and beyond
+                </p>
+              </div>
+
+              {/* Detailed Flow Diagram */}
+              <DetailedFlowchart />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Completion Badge */}
         <motion.div

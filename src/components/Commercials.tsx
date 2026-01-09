@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { DollarSign, Calendar, Package, Clock, Headphones, RefreshCw, ChevronDown } from 'lucide-react';
+import { DollarSign, Calendar, Package, Clock, Headphones, ChevronDown, Download } from 'lucide-react';
 import { GlassCard } from './GlassCard';
-import { useState } from 'react';
 
 const commercialSections = [
   {
@@ -22,8 +22,8 @@ const commercialSections = [
     title: 'Payment Milestones',
     color: 'blue',
     items: [
-      '30% - Project kickoff & requirement finalization',
-      '40% - Design approval & development completion',
+      '40% - Project kickoff & requirement finalization',
+      '30% - Design approval & development completion',
       '30% - Testing, deployment & go-live'
     ],
     note: 'Flexible payment schedule available'
@@ -34,7 +34,10 @@ const commercialSections = [
     color: 'purple',
     items: [
       'Business logo & branding assets',
+      'Business Operations & Processes information',
       'WhatsApp Business API account',
+      'Meta Ads API',
+      'Instagram API',
       'Email service credentials (Mailjet)',
       'Telephony service details (MCUBE)',
       'Existing customer data (if any)'
@@ -58,26 +61,10 @@ const commercialSections = [
     title: 'Support & Warranty',
     color: 'green',
     items: [
-      '90 days free bug fixes & support',
-      'Priority email & phone support',
-      'Knowledge base & video tutorials',
-      'Dedicated account manager',
-      'Quarterly health check-ups'
+      'Lifetime support for bugs',
+      'Priority email & phone support'
     ],
     note: 'Extended support packages available'
-  },
-  {
-    icon: RefreshCw,
-    title: 'AMC & Future Enhancements',
-    color: 'yellow',
-    items: [
-      'Optional Annual Maintenance Contract',
-      'Feature updates & improvements',
-      'Server maintenance & monitoring',
-      'Security patches & upgrades',
-      'New integration additions'
-    ],
-    note: 'Discuss after 90-day warranty period'
   }
 ];
 
@@ -103,6 +90,39 @@ export function Commercials() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Transparent pricing, clear milestones, and comprehensive support
           </p>
+        </motion.div>
+
+        {/* Quotation Preview */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <GlassCard className="p-6 bg-white/5">
+            <div className="relative">
+              <img
+                src="/quotation.svg"
+                alt="Quotation"
+                className="w-full h-auto rounded-lg"
+              />
+              <motion.button
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/quotation.svg';
+                  link.download = 'quotation.svg';
+                  link.click();
+                }}
+                className="absolute top-4 right-4 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full font-semibold flex items-center gap-2 text-white shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="w-4 h-4" />
+                Download
+              </motion.button>
+            </div>
+          </GlassCard>
         </motion.div>
 
         <div className="space-y-4">
@@ -177,48 +197,6 @@ export function Commercials() {
             </motion.div>
           ))}
         </div>
-
-        {/* Summary Card */}
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <GlassCard className="p-8">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-2">What's Included</h3>
-              <p className="text-gray-400">Everything you need for a successful CRM implementation</p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: '✅', label: 'Custom Development', color: 'cyan' },
-                { icon: '🎨', label: 'UI/UX Design', color: 'blue' },
-                { icon: '🔌', label: 'All Integrations', color: 'purple' },
-                { icon: '📚', label: 'Training & Docs', color: 'pink' },
-                { icon: '🚀', label: 'Deployment', color: 'green' },
-                { icon: '🛡️', label: '90-Day Warranty', color: 'yellow' },
-                { icon: '📞', label: 'Priority Support', color: 'orange' },
-                { icon: '📊', label: 'Analytics Setup', color: 'red' }
-              ].map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  className="text-center p-4 rounded-xl bg-white/5"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
-                >
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className="text-xs text-gray-400">{item.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </GlassCard>
-        </motion.div>
 
         {/* Trust Badge */}
         <motion.div

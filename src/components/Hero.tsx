@@ -1,18 +1,14 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Phone, MessageCircle, Sparkles } from 'lucide-react';
 import { GlassCard } from './GlassCard';
 
 export function Hero() {
-  const handleApprove = () => {
-    alert('Thank you for your interest! The proposal approval process will be initiated.');
-  };
-
   const handleCall = () => {
-    window.location.href = 'tel:+1234567890';
+    window.location.href = 'tel:+919899997235';
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank');
+    window.open('https://wa.me/917483618278', '_blank');
   };
 
   return (
@@ -92,22 +88,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <motion.button
-              onClick={handleApprove}
-              className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold flex items-center gap-2 overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Approve Proposal</span>
-              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"
-                initial={{ x: '100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-
             <motion.button
               onClick={handleCall}
               className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full font-semibold flex items-center gap-2 hover:bg-white/10 hover:border-cyan-500/50 transition-all"

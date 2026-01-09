@@ -1,18 +1,14 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, MessageCircle, CheckCircle2, Sparkles } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle2, Sparkles } from 'lucide-react';
 import { GlassCard } from './GlassCard';
 
 export function FinalCTA() {
-  const handleApprove = () => {
-    alert('Thank you for approving! We will reach out to you shortly to begin the project.');
-  };
-
   const handleCall = () => {
-    window.location.href = 'tel:+1234567890';
+    window.location.href = 'tel:+919899997235';
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank');
+    window.open('https://wa.me/917483618278', '_blank');
   };
 
   return (
@@ -136,23 +132,6 @@ export function FinalCTA() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <motion.button
-                onClick={handleApprove}
-                className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-bold text-lg flex items-center gap-3 overflow-hidden shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <CheckCircle2 className="w-6 h-6 relative z-10" />
-                <span className="relative z-10">Approve Proposal</span>
-                <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-2 transition-transform" />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"
-                  initial={{ x: '100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
-
-              <motion.button
                 onClick={handleCall}
                 className="px-10 py-5 bg-white/5 backdrop-blur-sm border-2 border-white/20 rounded-full font-semibold text-lg flex items-center gap-3 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
                 whileHover={{ scale: 1.05 }}
@@ -187,11 +166,7 @@ export function FinalCTA() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-400" />
-                <span>90-day warranty</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
-                <span>8-week delivery</span>
+                <span>8-10 Weeks timeline</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-400" />
@@ -210,7 +185,7 @@ export function FinalCTA() {
           transition={{ delay: 1, duration: 0.6 }}
         >
           <p className="text-gray-500 italic text-sm">
-            "Transform your business operations from chaotic to systematic in just 8 weeks"
+            "Transform your business operations from chaotic to systematic in just 8-10 weeks"
           </p>
         </motion.div>
       </div>
