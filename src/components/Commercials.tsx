@@ -23,7 +23,7 @@ const commercialSections = [
     color: 'blue',
     items: [
       '40% - Project kickoff & requirement finalization',
-      '30% - Design approval & development completion',
+      '30% - Mvp Submission',
       '30% - Testing, deployment & go-live'
     ],
     note: 'Flexible payment schedule available'
